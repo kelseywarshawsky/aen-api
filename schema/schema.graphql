@@ -1,0 +1,18 @@
+input CreateCharacterInput {
+  name: String!
+  age: Int!
+}
+
+type Character {
+  id: ID!
+  name: String!
+  age: Int!
+}
+
+type Mutation {
+  createCharacter(input: CreateCharacterInput!): Character
+}
+
+type Query {
+  getCharacters: [Character]
+}
