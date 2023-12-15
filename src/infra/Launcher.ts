@@ -2,7 +2,6 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { AenCdkStack } from './stacks/AenStack';
-import { LambdaStack } from './stacks/LambdaStack';
 
 const app = new cdk.App();
 new AenCdkStack(app, 'AenCdkStack', {
@@ -16,9 +15,7 @@ new AenCdkStack(app, 'AenCdkStack', {
 
     /* Uncomment the next line if you know exactly what Account and Region you
      * want to deploy the stack to. */
-    env: { account: '333136974713', region: 'us-east-1' },
+    env: { account: '333136974713', region: 'us-west-2' },
 
     /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
-
-new LambdaStack(app, 'LambdaStack')
