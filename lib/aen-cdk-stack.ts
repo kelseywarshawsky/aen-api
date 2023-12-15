@@ -107,5 +107,10 @@ export class AenCdkStack extends cdk.Stack {
     new cdk.CfnOutput(this, "Stack Region", {
       value: this.region
     });
+
+    new cdk.CfnOutput(this, "Stack Name", {
+      value: this.stackName
+    });
+
   }
 }
