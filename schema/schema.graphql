@@ -1,12 +1,56 @@
+type CharacterDescription {
+  height: String
+  weight: String
+  age: Int
+  hair: String
+  eyes: String
+  skin: String
+  additionalFeatures: String
+}
+
+input CharacterDescriptionInput {
+  height: String
+  weight: String
+  age: Int
+  hair: String
+  eyes: String
+  skin: String
+  additionalFeatures: String
+}
+
 input CreateCharacterInput {
+  userId: String!
   name: String!
-  age: Int!
+  campaignIds: [String!]
+  ancestry: String
+  bloodline: String
+  lifePathIds: [String]
+  languages: [String!]
+  isReady: Boolean!
+  class: String
+  tradition: String
 }
 
 type Character {
-  id: ID!
+  id: String!
+  userId: Int!
   name: String!
-  age: Int!
+  campaignIds: [String!]!
+  ancestry: String
+  bloodline: String!
+  lifePathIds: [String]
+  languages: [String!]!
+  isReady: Boolean!
+  class: String
+  tradition: String
+}
+
+type Story {
+  characterId: Int!
+  isBackstory: Boolean!
+  notes: String
+  inGameDate: String
+  sessionDate: String
 }
 
 type Mutation {
@@ -15,4 +59,5 @@ type Mutation {
 
 type Query {
   getCharacters: [Character]
+  getCharacter(id: Int!): Character
 }

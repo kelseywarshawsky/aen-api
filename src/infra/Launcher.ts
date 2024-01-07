@@ -15,7 +15,7 @@ new AenCdkStack(app, 'AenCdkStack', {
 
     /* Uncomment the next line if you know exactly what Account and Region you
      * want to deploy the stack to. */
-    env: { account: '333136974713', region: 'us-west-2' },
+    env: { account: process.env.ACCOUNT, region: process.env.REGION },
 
     /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
