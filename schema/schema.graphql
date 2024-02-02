@@ -4,7 +4,6 @@ type CharacterDescription {
   age: Int
   hair: String
   eyes: String
-  skin: String
   additionalFeatures: String
 }
 
@@ -14,7 +13,6 @@ input CharacterDescriptionInput {
   age: Int
   hair: String
   eyes: String
-  skin: String
   additionalFeatures: String
 }
 
@@ -27,8 +25,6 @@ input CreateCharacterInput {
   lifePathIds: [String]
   languages: [String!]
   isReady: Boolean!
-  class: String
-  tradition: String
 }
 
 type Character {
@@ -36,10 +32,10 @@ type Character {
   userId: Int!
   name: String!
   campaignIds: [String!]!
-  ancestry: String
-  bloodline: String!
+  ancestry: String!
+  bloodline: String
   lifePathIds: [String]
-  languages: [String!]!
+  languages: [String!]
   isReady: Boolean!
   class: String
   tradition: String
