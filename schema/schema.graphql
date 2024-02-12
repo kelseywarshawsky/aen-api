@@ -25,11 +25,12 @@ input CreateCharacterInput {
   lifePathIds: [String]
   languages: [String!]
   isReady: Boolean!
+  heritage: String
 }
 
 type Character {
   id: String!
-  userId: Int!
+  userId: String!
   name: String!
   campaignIds: [String!]!
   ancestry: String!
@@ -42,15 +43,24 @@ type Character {
 }
 
 type Story {
-  characterId: Int!
+  characterId: String!
   isBackstory: Boolean!
   notes: String
   inGameDate: String
   sessionDate: String
 }
 
+type TestData {
+  name: String!
+}
+
+input Test {
+  name: String!
+}
+
 type Mutation {
   createCharacter(input: CreateCharacterInput!): Character
+  testMutation(input: Test!): String!
 }
 
 type Query {

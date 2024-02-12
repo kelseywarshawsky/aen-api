@@ -10,7 +10,13 @@
  * @param {DbType} dbItem the database item to clear
  * @return {*}  {Type}
  */
-export declare function clearDb<DbType extends DbItem, Type>(dbItem: DbType): Type;
+export function clearDb<DbType extends DbItem, Type>(dbItem: DbType): Type {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    const { pk, sk, gsi1pk, gsi1sk, gsi2pk, gsi2sk, gsi3pk, gsi3sk, _ttl, ...item } = dbItem;
+
+    return item as unknown as Type;
+}
+
 export interface DbItem {
     pk: string;
     sk: string;
@@ -22,4 +28,3 @@ export interface DbItem {
     gsi3sk?: string;
     _ttl?: number;
 }
-export { };

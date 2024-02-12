@@ -31,7 +31,7 @@ export function toCharacterDb(Character: Character): CharacterDb {
  * Returns the partition key value for a Character record
  *
  * @export
- * @param {Pick<Character, 'companyId'>} { companyId }
+ * @param {Pick<Character, 'id'>} { id }
  * @return {*}  {string}
  */
 export function CharacterPk({ id }: Pick<Character, 'id'>): string {
